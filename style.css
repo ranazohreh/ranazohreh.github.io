@@ -1,22 +1,28 @@
 /* ============================================================
-   Rana Zohreh — "Bench & Code" v2 (warm, grainy, editorial)
-   Display: Fraunces · Body: Inter · Labels: IBM Plex Mono
+   Rana Zohreh — "Bench & Code" v3 (warm multi-accent, Mulish)
+   Display + Body: Mulish (Calibri-like humanist sans)
+   Labels: IBM Plex Mono
+   Palette: bone + olive + amber + oxblood
    Edit :root to restyle everything.
    ============================================================ */
 
 :root {
-  /* ---- COLORS ---- */
-  --paper:  #f2e9d8;   /* warm cream-bone */
-  --paper2: #efe3cd;   /* slightly deeper, for the photo frame */
+  /* ---- BASE ---- */
+  --paper:  #f7f3ea;   /* warm off-white bone */
+  --paper2: #f1ebde;   /* photo frame */
   --ink:    #211c17;   /* warm near-black */
   --muted:  #7c6f5d;   /* warm grey */
-  --accent: #a85d2e;   /* burnt amber  ← change this one line to recolor.
-                          green option:  #4a6741  |  oxblood: #7c3a33 */
-  --line:   #ddcfb6;   /* warm hairline */
+  --line:   #e6ddca;   /* warm hairline */
+
+  /* ---- ACCENTS (the palette) ---- */
+  --olive:   #5b6b3a;
+  --amber:   #a85d2e;
+  --oxblood: #7c3a33;
+  --accent:  var(--olive);   /* primary: links + active nav */
 
   /* ---- TYPE ---- */
-  --display: 'Fraunces', Georgia, serif;
-  --body:    'Inter', system-ui, sans-serif;
+  --display: 'Mulish', system-ui, sans-serif;
+  --body:    'Mulish', system-ui, sans-serif;
   --mono:    'IBM Plex Mono', monospace;
 
   --maxw: 880px;
@@ -35,16 +41,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---- FILM GRAIN OVERLAY (covers whole page, ignores clicks) ---- */
+/* ---- FILM GRAIN OVERLAY ---- */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.5;                 /* lower = subtler grain */
+  opacity: 0.9;                 /* lower = subtler grain */
   mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -66,9 +72,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 }
 .logo {
   font-family: var(--display);
-  font-weight: 600;
-  font-size: 1.35rem;
-  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 1.3rem;
   letter-spacing: -0.01em;
   color: var(--ink);
 }
@@ -87,7 +92,6 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
    ============================================================ */
 main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 
-/* ---- HERO: two columns (text + portrait) ---- */
 .hero {
   padding: 3.5rem 0 1rem;
   display: grid;
@@ -96,7 +100,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
   align-items: start;
 }
 @media (min-width: 720px) {
-  .hero { grid-template-columns: 1fr 260px; gap: 3rem; }
+  .hero { grid-template-columns: 260px 1fr; gap: 3rem; }
+  .portrait { order: -1; }   /* portrait sits in the left column */
 }
 
 .eyebrow {
@@ -104,35 +109,25 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
   font-size: 0.76rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--oxblood);
   margin: 0 0 1rem;
 }
 
 .hero h1 {
   font-family: var(--display);
-  font-weight: 600;
-  font-optical-sizing: auto;
-  font-size: clamp(2.8rem, 7vw, 4.4rem);
-  line-height: 0.98;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  font-size: clamp(2.7rem, 7vw, 4.2rem);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
   margin: 0 0 1.1rem;
 }
 
-/* ---- SIGNATURE ladder (now shorter + major/minor rhythm) ---- */
-.ladder {
-  height: 15px;
-  max-width: 380px;
-  margin: 0 0 1.6rem;
-  border-bottom: 1.5px solid var(--ink);
-  background-repeat: repeat-x;
-  background-position: bottom left;
-  background-image:
-    repeating-linear-gradient(to right,
-      var(--ink) 0, var(--ink) 1.5px, transparent 1.5px, transparent 70px),
-    repeating-linear-gradient(to right,
-      var(--accent) 0, var(--accent) 1px, transparent 1px, transparent 14px);
-  background-size: 100% 14px, 100% 7px;
-}
+/* ---- SIGNATURE: three-segment palette bar ---- */
+.palette-rule { display: flex; gap: 5px; margin: 0 0 1.5rem; }
+.palette-rule span { width: 34px; height: 6px; border-radius: 2px; display: block; }
+.palette-rule span:nth-child(1) { background: var(--olive); }
+.palette-rule span:nth-child(2) { background: var(--amber); }
+.palette-rule span:nth-child(3) { background: var(--oxblood); }
 
 .lede { font-size: 1.18rem; color: var(--ink); max-width: 40ch; margin: 0; }
 
@@ -145,17 +140,15 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
   display: block;
   background: var(--paper2);
   border: 1px solid var(--line);
-  /* gentle warm unify-filter; delete this line for a plain photo */
-  filter: grayscale(0.12) sepia(0.10) contrast(1.02);
+  filter: grayscale(0.12) sepia(0.10) contrast(1.02);  /* delete for a plain photo */
 }
-/* amber corner tick = accent detail */
 .portrait::after {
   content: "";
   position: absolute;
   left: -1px; bottom: -1px;
   width: 34px; height: 34px;
-  border-left: 2px solid var(--accent);
-  border-bottom: 2px solid var(--accent);
+  border-left: 2px solid var(--oxblood);
+  border-bottom: 2px solid var(--oxblood);
 }
 .portrait figcaption {
   font-family: var(--mono);
@@ -180,13 +173,13 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
   display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
   font-family: var(--mono); font-size: 0.84rem;
 }
-.focus-list li::before { content: "+ "; color: var(--accent); }
+.focus-list li::before { content: "+ "; color: var(--amber); }
 
 /* ---- inner / stub pages ---- */
 .page-intro { padding: 3rem 0 1rem; }
 .page-intro h1 {
-  font-family: var(--display); font-weight: 600; font-optical-sizing: auto;
-  font-size: clamp(2.4rem, 6vw, 3.4rem); letter-spacing: -0.02em; margin: 0 0 1rem;
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(2.3rem, 6vw, 3.2rem); letter-spacing: -0.025em; margin: 0 0 1rem;
 }
 .placeholder {
   font-family: var(--mono); font-size: 0.84rem; color: var(--muted);
@@ -203,7 +196,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 }
 .footer-links { display: flex; gap: 1.25rem; font-family: var(--mono); font-size: 0.8rem; }
 .footer-links a { color: var(--muted); }
-.footer-links a:hover { color: var(--ink); text-decoration: none; }
+.footer-links a:hover { color: var(--oxblood); text-decoration: none; }
 .footer-note { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); margin: 0; }
 
 /* ============================================================
