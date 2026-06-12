@@ -8,11 +8,11 @@
 
 :root {
   /* ---- BASE ---- */
-  --paper:  #f7f3ea;   /* warm off-white bone */
-  --paper2: #f1ebde;   /* photo frame */
+  --paper:  #f2e9d8;   /* warm cream-bone (back toward previous) */
+  --paper2: #ede1c9;   /* photo frame */
   --ink:    #211c17;   /* warm near-black */
   --muted:  #7c6f5d;   /* warm grey */
-  --line:   #e6ddca;   /* warm hairline */
+  --line:   #ddcfb6;   /* warm hairline */
 
   /* ---- ACCENTS (the palette) ---- */
   --olive:   #5b6b3a;
@@ -79,7 +79,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 }
 .logo:hover { text-decoration: none; color: var(--accent); }
 
-.site-nav { display: flex; gap: 1.25rem; font-family: var(--mono); font-size: 0.8rem; }
+.site-nav { display: flex; gap: 1.9rem; font-family: var(--mono); font-size: 0.8rem; }
 .site-nav a { color: var(--muted); }
 .site-nav a:hover { color: var(--ink); text-decoration: none; }
 .site-nav a.is-active { color: var(--ink); }
@@ -132,7 +132,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 .lede { font-size: 1.18rem; color: var(--ink); max-width: 40ch; margin: 0; }
 
 /* ---- PORTRAIT ---- */
-.portrait { margin: 0; position: relative; }
+.portrait { margin: 0; position: relative; z-index: 10000; }  /* z-index keeps photo above the grain */
 .portrait img {
   width: 100%;
   aspect-ratio: 4 / 5;
@@ -141,14 +141,6 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
   background: var(--paper2);
   border: 1px solid var(--line);
   filter: grayscale(0.12) sepia(0.10) contrast(1.02);  /* delete for a plain photo */
-}
-.portrait::after {
-  content: "";
-  position: absolute;
-  left: -1px; bottom: -1px;
-  width: 34px; height: 34px;
-  border-left: 2px solid var(--oxblood);
-  border-bottom: 2px solid var(--oxblood);
 }
 .portrait figcaption {
   font-family: var(--mono);
