@@ -1,24 +1,25 @@
 /* ============================================================
-   Rana Zohreh — "Bench & Code"
-   Wet-lab + dry-lab identity. Edit :root to restyle everything.
-   Display: Newsreader (serif) · Body: Inter · Labels: IBM Plex Mono
+   Rana Zohreh — "Bench & Code" v2 (warm, grainy, editorial)
+   Display: Fraunces · Body: Inter · Labels: IBM Plex Mono
+   Edit :root to restyle everything.
    ============================================================ */
 
 :root {
-  /* ---- COLORS (change these to recolor everything) ---- */
-  --paper:  #f6f4ef;   /* warm bone background */
-  --ink:    #1c1d1a;   /* main text, cool-black */
-  --muted:  #6a6b63;   /* secondary text */
-  --accent: #2f5d4f;   /* deep botanical green */
-  --line:   #e3e0d8;   /* hairline borders */
+  /* ---- COLORS ---- */
+  --paper:  #f2e9d8;   /* warm cream-bone */
+  --paper2: #efe3cd;   /* slightly deeper, for the photo frame */
+  --ink:    #211c17;   /* warm near-black */
+  --muted:  #7c6f5d;   /* warm grey */
+  --accent: #a85d2e;   /* burnt amber  ← change this one line to recolor.
+                          green option:  #4a6741  |  oxblood: #7c3a33 */
+  --line:   #ddcfb6;   /* warm hairline */
 
   /* ---- TYPE ---- */
-  --display: 'Newsreader', Georgia, serif;
+  --display: 'Fraunces', Georgia, serif;
   --body:    'Inter', system-ui, sans-serif;
   --mono:    'IBM Plex Mono', monospace;
 
-  /* ---- LAYOUT ---- */
-  --maxw: 720px;
+  --maxw: 880px;
 }
 
 * { box-sizing: border-box; }
@@ -34,13 +35,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ---- FILM GRAIN OVERLAY (covers whole page, ignores clicks) ---- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.5;                 /* lower = subtler grain */
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
+}
+
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
-a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
 /* ============================================================
    HEADER / NAV
@@ -55,43 +64,40 @@ a:focus-visible {
   justify-content: space-between;
   gap: 1rem;
 }
-
 .logo {
   font-family: var(--display);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+  font-optical-sizing: auto;
   letter-spacing: -0.01em;
   color: var(--ink);
 }
 .logo:hover { text-decoration: none; color: var(--accent); }
 
-.site-nav {
-  display: flex;
-  gap: 1.25rem;
-  font-family: var(--mono);
-  font-size: 0.8rem;
-}
+.site-nav { display: flex; gap: 1.25rem; font-family: var(--mono); font-size: 0.8rem; }
 .site-nav a { color: var(--muted); }
 .site-nav a:hover { color: var(--ink); text-decoration: none; }
 .site-nav a.is-active { color: var(--ink); }
 .site-nav a.is-active::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background: var(--accent);
-  margin-top: 3px;
+  content: ""; display: block; height: 2px; background: var(--accent); margin-top: 3px;
 }
 
 /* ============================================================
    MAIN
    ============================================================ */
-main {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 
-.hero { padding: 3.5rem 0 1rem; }
+/* ---- HERO: two columns (text + portrait) ---- */
+.hero {
+  padding: 3.5rem 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+@media (min-width: 720px) {
+  .hero { grid-template-columns: 1fr 260px; gap: 3rem; }
+}
 
 .eyebrow {
   font-family: var(--mono);
@@ -104,110 +110,101 @@ main {
 
 .hero h1 {
   font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(2.6rem, 6.5vw, 4rem);
-  line-height: 1.02;
-  letter-spacing: -0.015em;
-  margin: 0 0 1rem;
+  font-weight: 600;
+  font-optical-sizing: auto;
+  font-size: clamp(2.8rem, 7vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.1rem;
 }
 
-/* ---- SIGNATURE: measured-axis "ladder" ---- */
-/* a coordinate/gel ruler: major ticks (ink) every 72px,
-   minor ticks (accent) every 12px, sitting on a baseline */
+/* ---- SIGNATURE ladder (now shorter + major/minor rhythm) ---- */
 .ladder {
-  height: 16px;
-  margin: 0 0 1.75rem;
+  height: 15px;
+  max-width: 380px;
+  margin: 0 0 1.6rem;
   border-bottom: 1.5px solid var(--ink);
   background-repeat: repeat-x;
   background-position: bottom left;
   background-image:
     repeating-linear-gradient(to right,
-      var(--ink) 0, var(--ink) 1px, transparent 1px, transparent 72px),
+      var(--ink) 0, var(--ink) 1.5px, transparent 1.5px, transparent 70px),
     repeating-linear-gradient(to right,
-      var(--accent) 0, var(--accent) 1px, transparent 1px, transparent 12px);
-  background-size: 100% 15px, 100% 8px;
+      var(--accent) 0, var(--accent) 1px, transparent 1px, transparent 14px);
+  background-size: 100% 14px, 100% 7px;
 }
 
-.lede {
-  font-size: 1.18rem;
-  color: var(--ink);
-  max-width: 40ch;
-  margin: 0;
-}
+.lede { font-size: 1.18rem; color: var(--ink); max-width: 40ch; margin: 0; }
 
-.prose { padding: 1.5rem 0; }
-.prose p { margin: 0 0 1.25rem; color: #2a2b26; }
-
-/* ---- FOCUS AREAS ---- */
-.focus {
-  padding: 1.5rem 0 0;
-  border-top: 1px solid var(--line);
-  margin-top: 1rem;
+/* ---- PORTRAIT ---- */
+.portrait { margin: 0; position: relative; }
+.portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  background: var(--paper2);
+  border: 1px solid var(--line);
+  /* gentle warm unify-filter; delete this line for a plain photo */
+  filter: grayscale(0.12) sepia(0.10) contrast(1.02);
 }
-.focus-label {
+/* amber corner tick = accent detail */
+.portrait::after {
+  content: "";
+  position: absolute;
+  left: -1px; bottom: -1px;
+  width: 34px; height: 34px;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+.portrait figcaption {
   font-family: var(--mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.72rem;
   color: var(--muted);
+  margin-top: 0.6rem;
+  letter-spacing: 0.04em;
+}
+
+/* ---- PROSE ---- */
+.prose { padding: 1.5rem 0; max-width: 62ch; }
+.prose p { margin: 0 0 1.25rem; color: #2c261d; }
+
+/* ---- FOCUS ---- */
+.focus { padding: 1.5rem 0 0; border-top: 1px solid var(--line); margin-top: 1rem; }
+.focus-label {
+  font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
 }
 .focus-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.75rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  font-family: var(--mono);
-  font-size: 0.84rem;
+  list-style: none; padding: 0; margin: 0.75rem 0 0;
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  font-family: var(--mono); font-size: 0.84rem;
 }
 .focus-list li::before { content: "+ "; color: var(--accent); }
 
-/* ---- stub / inner pages ---- */
+/* ---- inner / stub pages ---- */
 .page-intro { padding: 3rem 0 1rem; }
 .page-intro h1 {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(2.2rem, 5.5vw, 3rem);
-  letter-spacing: -0.015em;
-  margin: 0 0 1rem;
+  font-family: var(--display); font-weight: 600; font-optical-sizing: auto;
+  font-size: clamp(2.4rem, 6vw, 3.4rem); letter-spacing: -0.02em; margin: 0 0 1rem;
 }
 .placeholder {
-  font-family: var(--mono);
-  font-size: 0.84rem;
-  color: var(--muted);
-  border: 1px dashed var(--line);
-  padding: 1rem 1.25rem;
-  border-radius: 4px;
+  font-family: var(--mono); font-size: 0.84rem; color: var(--muted);
+  border: 1px dashed var(--line); padding: 1rem 1.25rem; border-radius: 4px;
 }
 
 /* ============================================================
    FOOTER
    ============================================================ */
 .site-footer {
-  max-width: var(--maxw);
-  margin: 4rem auto 0;
-  padding: 1.5rem 1.5rem 3rem;
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.75rem;
+  max-width: var(--maxw); margin: 4rem auto 0;
+  padding: 1.5rem 1.5rem 3rem; border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem;
 }
-.footer-links {
-  display: flex;
-  gap: 1.25rem;
-  font-family: var(--mono);
-  font-size: 0.8rem;
-}
+.footer-links { display: flex; gap: 1.25rem; font-family: var(--mono); font-size: 0.8rem; }
 .footer-links a { color: var(--muted); }
 .footer-links a:hover { color: var(--ink); text-decoration: none; }
-.footer-note {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin: 0;
-}
+.footer-note { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); margin: 0; }
 
 /* ============================================================
    RESPONSIVE
@@ -216,8 +213,6 @@ main {
   body { font-size: 17px; }
   .site-header { padding-top: 1.75rem; }
   .hero { padding-top: 2.5rem; }
+  .portrait { max-width: 240px; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
