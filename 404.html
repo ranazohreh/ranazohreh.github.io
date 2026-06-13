@@ -3,16 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ranazohreh.com/">
-  <meta property="og:title" content="Rana Zohreh — Molecular Geneticist · Computational Biologist">
-  <meta property="og:description" content="Computational transcriptomics, machine learning, and gene-regulatory networks — population-aware cancer and disease genomics.">
-  <meta property="og:image" content="https://ranazohreh.com/og-card.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rana Zohreh — Molecular Geneticist · Computational Biologist">
-  <meta name="twitter:description" content="Computational transcriptomics, machine learning, and gene-regulatory networks.">
-  <meta name="twitter:image" content="https://ranazohreh.com/og-card.png">
-  <title>Projects — Rana Zohreh</title>
+  <title>Page not found — Rana Zohreh</title>
   <script>
   (function(){try{var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
   function toggleTheme(){var d=document.documentElement,c=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',c);try{localStorage.setItem('theme',c);}catch(e){}}
@@ -20,61 +11,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Bitter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
-  <link rel="apple-touch-icon" href="favicon-64.png">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+  <link rel="apple-touch-icon" href="/favicon-64.png">
 </head>
 <body>
   <header class="site-header">
     <a href="/" class="logo" aria-label="Home"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></a>
     <nav class="site-nav">
       <a href="/">About</a>
-      <a href="research">Research</a>
-      <a href="publications">Publications</a>
-      <a href="projects" class="is-active">Projects</a>
-      <a href="cv">CV</a>
-      <a href="contact">Contact</a>
+      <a href="/research">Research</a>
+      <a href="/publications">Publications</a>
+      <a href="/projects">Projects</a>
+      <a href="/cv">CV</a>
+      <a href="/contact">Contact</a>
     </nav>
     <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.2 17.2 18.6 18.6M18.6 5.4 17.2 6.8M6.8 17.2 5.4 18.6"/></svg></button>
     <div id="scroll-progress"></div>
   </header>
+
   <main>
     <section class="page-intro">
-      <h1>Projects</h1>
-      <p class="page-lede">Selected computational projects. Code and documentation on
-        <a href="https://github.com/ranazohreh" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-      <div class="projects-grid">
-        <article class="project-card">
-          <span class="tag">Single-cell / spatial</span>
-          <h2>Spatial Transcriptomics of Mouse Brain</h2>
-          <p>A scanpy/squidpy pipeline for preprocessing, clustering, and spatial-domain
-             analysis, with a PyTorch cell-type classifier benchmarked against a
-             scikit-learn baseline and interpreted via feature importance.</p>
-          <span class="project-stack">scanpy &middot; squidpy &middot; PyTorch &middot; scikit-learn</span>
-          <span class="links"><a href="https://github.com/ranazohreh/spatial-neuro-cell-identity" target="_blank" rel="noopener noreferrer">Repository &rarr;</a></span>
-        </article>
-        <article class="project-card">
-          <span class="tag">Regulatory networks</span>
-          <h2>Population-Specific ceRNA Pipeline</h2>
-          <p>Reproducible pipeline building population-stratified ceRNA and gene-regulatory
-             networks from RNA-seq and TCGA, with multi-criterion axis prioritization and
-             druggable-target mapping via a custom DGIdb GraphQL integration.</p>
-          <span class="project-stack">R &middot; DESeq2 &middot; TCGAbiolinks &middot; Cytoscape</span>
-          <span class="links"><a href="https://github.com/ranazohreh" target="_blank" rel="noopener noreferrer">Code in preparation &rarr;</a></span>
-        </article>
-        <article class="project-card">
-          <span class="tag">Machine learning</span>
-          <h2>ML Biomarker Discovery &mdash; Early-Onset Prostate Cancer</h2>
-          <p>WGCNA and differential-expression integration with a nested leave-one-out
-             pipeline (LASSO; SVM/RF/ANN) identifying the lncRNA PCSEAT, interpreted with
-             SHAP and permutation importance and validated in an independent cohort.</p>
-          <span class="project-stack">R &middot; Python &middot; scikit-learn &middot; WGCNA</span>
-          <span class="links"><a href="https://github.com/ranazohreh" target="_blank" rel="noopener noreferrer">Code in preparation &rarr;</a></span>
-        </article>
-      </div>
+      <h1>404</h1>
+      <p class="page-lede">This page doesn't exist — it may have been moved or the link is mistyped.</p>
+      <p style="margin-top:1.25rem;"><a href="/">&larr; Back to home</a></p>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="footer-links">
       <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ranazohreh@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></a>
@@ -85,6 +49,7 @@
     </div>
     <p class="footer-note">&copy; 2026 Rana Zohreh &middot; Tehran, Iran</p>
   </footer>
+
   <script>
   (function(){var last=0;function upd(){var el=document.getElementById('scroll-progress');if(!el)return;var d=document.documentElement;var h=d.scrollHeight-d.clientHeight;var y=window.scrollY||d.scrollTop;el.style.width=(h>0?(y/h*100):0)+'%';el.style.background=(y>last)?'var(--amber)':'var(--ink)';last=y;}window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);document.addEventListener('DOMContentLoaded',upd);})();
   </script>
