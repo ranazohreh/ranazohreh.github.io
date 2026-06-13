@@ -23,7 +23,84 @@
   <main>
     <section class="page-intro">
       <h1>Research</h1>
-      <p class="placeholder">Content coming next — research themes, projects, and figures.</p>
+      <p class="page-lede">
+        I develop computational methods — gene-regulatory networks and interpretable
+        machine learning — to understand how transcriptional programs drive cancer and
+        other diseases, with an emphasis on population-aware analysis and a foundation
+        in wet-lab molecular biology.
+      </p>
+
+      <div class="research-list">
+
+        <article class="theme">
+          <span class="tag">Regulatory networks</span>
+          <h2>Population-stratified regulatory networks in cancer</h2>
+          <p>
+            Tumor biology differs across ancestral populations, yet most regulatory
+            analyses pool patients together. I build population-specific ceRNA
+            (competing endogenous RNA) and gene-regulatory networks to expose those
+            differences. Across prostate (TCGA-PRAD) and testicular (TCGA-TGCT)
+            cohorts, I compared African American and European American patients —
+            integrating mRNA, lncRNA, and miRNA expression with somatic mutation
+            profiles — and built population- and tumor-type-specific networks that
+            reveal distinct hub genes and pathways. My current work prioritizes
+            regulatory axes with a multi-criterion composite score (statistical
+            robustness, experimental miRNA–target evidence, network topology, and
+            curated disease association) and links them to druggable targets through
+            a custom DGIdb GraphQL integration.
+          </p>
+          <p class="methods"><b>Methods</b> — DESeq2 · starBase / HMDD · TCGAbiolinks · Cytoscape / MCODE · Fisher Z</p>
+        </article>
+
+        <article class="theme">
+          <span class="tag">Machine learning</span>
+          <h2>Interpretable machine learning for biomarker discovery</h2>
+          <p>
+            I treat machine learning as a tool for discovery rather than a black box,
+            pairing predictive performance with interpretability. In early-onset
+            prostate cancer, I integrated WGCNA co-expression analysis with
+            differential expression to narrow candidate genes, then built a nested
+            leave-one-out pipeline with LASSO feature selection across SVM, Random
+            Forest, and ANN classifiers (AUC up to 0.91). This identified the lncRNA
+            PCSEAT as the single biomarker shared by all three models in a White
+            early-onset cohort, with robustness confirmed by permutation importance
+            and SHAP and validated in an independent dataset. Related work applies
+            the same philosophy to glioblastoma treatment response and tumor
+            classification.
+          </p>
+          <p class="methods"><b>Methods</b> — WGCNA · LASSO · SVM / RF / ANN · SHAP · nested cross-validation</p>
+        </article>
+
+        <article class="theme">
+          <span class="tag">Emerging direction</span>
+          <h2>Single-cell &amp; spatial transcriptomics</h2>
+          <p>
+            I am extending network- and ML-based thinking to single-cell and spatial
+            data, where the goal is to connect regulatory programs to cell identity
+            and tissue organization. In an independent project on mouse-brain spatial
+            transcriptomics, I built a scanpy/squidpy pipeline for preprocessing,
+            clustering, and spatial-domain analysis, with a PyTorch cell-type
+            classifier benchmarked against a scikit-learn baseline and interpreted
+            through feature importance. Regulatory genomics at single-cell and spatial
+            resolution is the direction I most want to grow into.
+          </p>
+          <p class="methods"><b>Methods</b> — scanpy · squidpy · PyTorch · spatial-domain analysis</p>
+        </article>
+
+        <article class="theme">
+          <span class="tag">Experimental grounding</span>
+          <h2>A foundation at the bench</h2>
+          <p>
+            My computational work is anchored in hands-on molecular biology. Through
+            laboratory training I gained practical experience in nucleic-acid
+            extraction, conventional and real-time PCR, gel electrophoresis, and
+            mammalian cell culture with viability assays — experience that keeps my
+            analyses tied to how the data are actually generated.
+          </p>
+          <p class="methods"><b>Methods</b> — DNA/RNA extraction · qRT-PCR · electrophoresis · cell culture · MTT / AO-PI assays</p>
+        </article>
+
+      </div>
     </section>
   </main>
   <footer class="site-footer">

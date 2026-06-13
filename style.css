@@ -195,6 +195,22 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
   border: 1px dashed var(--line); padding: 1rem 1.25rem; border-radius: 4px;
 }
 
+/* ---- RESEARCH page ---- */
+.page-lede { font-size: 1.12rem; color: var(--ink); max-width: 60ch; margin: 0 0 0.5rem; }
+.research-list { display: flex; flex-direction: column; gap: 2.4rem; padding: 1.75rem 0 0; max-width: 66ch; }
+.theme { border-top: 1px solid var(--line); padding-top: 1.4rem; }
+.theme .tag {
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--oxblood); display: block; margin-bottom: 0.5rem;
+}
+.theme h2 {
+  font-family: var(--display); font-weight: 600; font-size: 1.5rem;
+  letter-spacing: -0.01em; line-height: 1.15; margin: 0 0 0.6rem;
+}
+.theme p { margin: 0 0 0.9rem; color: #2c261d; }
+.theme .methods { font-family: var(--mono); font-size: 0.76rem; color: var(--muted); margin: 0; }
+.theme .methods b { color: var(--ink); font-weight: 500; }
+
 /* ============================================================
    FOOTER
    ============================================================ */
