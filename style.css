@@ -25,7 +25,7 @@
   --body:    'Bitter', Georgia, serif;         /* ≈ Clarendon (free slab) */
   --mono:    'IBM Plex Mono', monospace;
 
-  --maxw: 880px;
+  --maxw: 1080px;
 }
 
 * { box-sizing: border-box; }
@@ -61,9 +61,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
    HEADER / NAV
    ============================================================ */
 .site-header {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem 0;
+  margin: 0;
+  padding: 2.5rem clamp(1.5rem, 4vw, 3rem) 0;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -123,12 +122,12 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
   margin: 0 0 1.1rem;
 }
 
-/* ---- SIGNATURE: three-segment palette bar ---- */
-.palette-rule { display: flex; gap: 5px; margin: 0 0 1.5rem; }
-.palette-rule span { width: 34px; height: 6px; border-radius: 2px; display: block; }
-.palette-rule span:nth-child(1) { background: var(--olive); }
-.palette-rule span:nth-child(2) { background: var(--amber); }
-.palette-rule span:nth-child(3) { background: var(--oxblood); }
+/* ---- SIGNATURE: three dots (olive / amber / oxblood) ---- */
+.dots { display: flex; gap: 9px; margin: 0 0 1.6rem; }
+.dots span { width: 14px; height: 14px; border-radius: 50%; display: block; }
+.dots span:nth-child(1) { background: var(--olive); }
+.dots span:nth-child(2) { background: var(--amber); }
+.dots span:nth-child(3) { background: var(--oxblood); }
 
 .lede { font-size: 1.18rem; color: var(--ink); max-width: 40ch; margin: 0; }
 
