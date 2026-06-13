@@ -205,8 +205,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 
 /* ---- RESEARCH page ---- */
 .page-lede { font-size: 1.12rem; color: var(--ink); max-width: 60ch; margin: 0 0 0.5rem; }
-.research-list { display: flex; flex-direction: column; gap: 2.4rem; padding: 1.75rem 0 0; max-width: 66ch; }
-.theme { border-top: 1px solid var(--line); padding-top: 1.4rem; }
+.research-list { display: flex; flex-direction: column; gap: 3.4rem; padding: 2.4rem 0 0; max-width: 66ch; }
+.theme { border-top: 1px solid var(--line); padding-top: 2rem; }
 .theme .tag {
   font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.05em;
   text-transform: uppercase; color: var(--paper); background: var(--oxblood);
@@ -221,13 +221,13 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 .theme .methods b { color: var(--ink); font-weight: 500; }
 
 /* ---- PUBLICATIONS page ---- */
-.pub-group { margin: 0 0 3.2rem; max-width: 72ch; }
+.pub-group { margin: 0 0 4.4rem; max-width: 72ch; }
 .pub-label {
   font-family: var(--display); font-size: 1.25rem; font-weight: 600;
   letter-spacing: -0.01em; color: var(--oxblood); display: inline-block;
-  margin-bottom: 0.7rem; padding-bottom: 3px; border-bottom: 2px solid var(--oxblood);
+  margin-bottom: 1rem; padding-bottom: 3px; border-bottom: 2px solid var(--oxblood);
 }
-.pub { padding: 0.85rem 0; border-top: 1px solid var(--line); }
+.pub { padding: 1.15rem 0; border-top: 1px solid var(--line); }
 .pub .title { font-weight: 600; color: var(--ink); }
 .pub .authors { display: block; color: var(--muted); font-size: 0.92rem; margin-top: 0.15rem; }
 .pub .venue { display: block; color: var(--muted); font-size: 0.88rem; font-style: italic; margin-top: 0.1rem; }
@@ -352,3 +352,18 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
   position: absolute; left: 0; bottom: 0; height: 3px; width: 0;
   background: var(--amber); z-index: 2; transition: background .15s ease;
 }
+
+
+/* ---- CONTACT page ---- */
+.contact-list { display: flex; flex-direction: column; gap: 0; padding: 1.75rem 0 0; max-width: 58ch; }
+.contact-row {
+  display: flex; align-items: center; gap: 1rem; padding: 1rem 0;
+  border-top: 1px solid var(--line); color: var(--ink);
+}
+.contact-row:hover { text-decoration: none; }
+.contact-row svg { width: 22px; height: 22px; flex: none; color: var(--muted); }
+.contact-row:hover svg,
+.contact-row:hover .c-label { color: var(--oxblood); }
+.c-label { font-weight: 600; min-width: 96px; }
+.c-val { color: var(--muted); font-family: var(--mono); font-size: 0.86rem; }
+.contact-note { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); margin-top: 1.5rem; }
