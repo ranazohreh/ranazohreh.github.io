@@ -29,7 +29,13 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;            /* kills the horizontal scrollbar + bottom shake; keeps sticky working */
+  scrollbar-width: none;       /* Firefox: hide scrollbar */
+  -ms-overflow-style: none;    /* legacy Edge */
+}
+html::-webkit-scrollbar { width: 0; height: 0; }  /* Chrome/Safari: hide scrollbar */
 
 body {
   margin: 0;
