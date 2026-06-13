@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV — Rana Zohreh</title>
+  <script>
+  (function(){try{var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+  function toggleTheme(){var d=document.documentElement,c=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',c);try{localStorage.setItem('theme',c);}catch(e){}}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Bitter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -16,14 +20,98 @@
       <a href="index.html">About</a>
       <a href="research.html">Research</a>
       <a href="publications.html">Publications</a>
+      <a href="projects.html">Projects</a>
       <a href="cv.html" class="is-active">CV</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.2 17.2 18.6 18.6M18.6 5.4 17.2 6.8M6.8 17.2 5.4 18.6"/></svg></button>
   </header>
   <main>
     <section class="page-intro">
-      <h1>CV</h1>
-      <p class="placeholder">Content coming next — full CV (HTML) plus a downloadable PDF.</p>
+      <h1>Curriculum Vitae</h1>
+      <a class="cv-download" href="Rana_Zohreh_CV.pdf" target="_blank" rel="noopener noreferrer">Download PDF &darr;</a>
+
+      <div class="cv-section">
+        <h2>General information</h2>
+        <dl class="cv-info">
+          <dt>Name</dt><dd>Rana Zohreh</dd>
+          <dt>Role</dt><dd>Molecular Geneticist &middot; Computational Biologist</dd>
+          <dt>Location</dt><dd>Tehran, Iran</dd>
+          <dt>Email</dt><dd><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ranazohreh@gmail.com" target="_blank" rel="noopener noreferrer">ranazohreh@gmail.com</a></dd>
+          <dt>Languages</dt><dd>Persian (native), English (professional working proficiency)</dd>
+        </dl>
+      </div>
+
+      <div class="cv-section">
+        <h2>Education</h2>
+        <div class="cv-row"><div class="cv-date">2021&ndash;2025</div>
+          <div class="cv-entry"><h3>M.Sc. Molecular Genetics</h3>
+            <p class="org">Islamic Azad University, Central Tehran Branch &middot; GPA 18.52 / 20</p>
+            <ul><li>Thesis: comparison of common mutations and gene networks in prostate and testicular cancer using bioinformatics tools &mdash; graded <em>Excellent</em>. Supervisor: Dr. Nastaran Asghari Moghaddam; Advisor: Dr. Mina Ramezani.</li></ul>
+          </div></div>
+        <div class="cv-row"><div class="cv-date">2016&ndash;2020</div>
+          <div class="cv-entry"><h3>B.Sc. Molecular Genetics</h3>
+            <p class="org">Islamic Azad University, Qom &middot; GPA 15.84 / 20</p>
+          </div></div>
+      </div>
+
+      <div class="cv-section">
+        <h2>Research experience</h2>
+        <div class="cv-row"><div class="cv-date">2024&ndash;present</div>
+          <div class="cv-entry"><h3>Graduate Researcher &mdash; Population-Specific ceRNA Networks</h3>
+            <p class="org">Dept. of Biology, Central Tehran Branch, Islamic Azad University</p>
+            <ul>
+              <li>Constructed population-specific ceRNA networks from RNA-seq (GSE104131; DESeq2), integrating HMDD v4, starBase, and four target-prediction databases.</li>
+              <li>Validated regulatory axes in TCGA-PRAD via correlation (BH-FDR), expression-matched backgrounds, and Fisher Z cross-population testing.</li>
+              <li>Prioritized axes with a four-criterion composite score; mapped druggable targets through a custom DGIdb v5 GraphQL integration.</li>
+            </ul>
+          </div></div>
+        <div class="cv-row"><div class="cv-date">2024&ndash;2025</div>
+          <div class="cv-entry"><h3>Researcher &mdash; ML for Early-Onset Prostate Cancer Biomarkers</h3>
+            <p class="org">Dept. of Biology, Central Tehran Branch, Islamic Azad University</p>
+            <ul>
+              <li>Integrated WGCNA co-expression with DESeq2 on TCGA-PRAD (White, &lt;55 yrs); found 485 candidate genes enriched in cytoskeleton-organization pathways.</li>
+              <li>Built a nested leave-one-out pipeline with LASSO across SVM, RF, and ANN (AUC 0.86 / 0.89 / 0.91).</li>
+              <li>Identified lncRNA PCSEAT as the shared biomarker; confirmed with permutation importance and SHAP; validated in GSE115414.</li>
+            </ul>
+          </div></div>
+        <div class="cv-row"><div class="cv-date">2021&ndash;2025</div>
+          <div class="cv-entry"><h3>MSc Thesis Researcher &mdash; Comparative Cancer Genomics</h3>
+            <p class="org">Dept. of Biology, Central Tehran Branch, Islamic Azad University</p>
+            <ul>
+              <li>Compared African American vs. European American patients across prostate (TCGA-PRAD) and testicular (TCGA-TGCT) cohorts, integrating expression with somatic mutation profiles (cBioPortal).</li>
+              <li>Built PPI and ceRNA networks for all four population&ndash;cohort groups; identified population-specific hubs and distinct pathways.</li>
+            </ul>
+          </div></div>
+        <div class="cv-row"><div class="cv-date">2023</div>
+          <div class="cv-entry"><h3>Laboratory Intern &mdash; Wet-Lab Training</h3>
+            <p class="org">GenIran, Tehran</p>
+            <ul><li>Hands-on molecular biology (DNA/RNA extraction, PCR, qRT-PCR, electrophoresis) and mammalian cell culture (passaging, freeze/thaw, MTT and AO/PI viability assays).</li></ul>
+          </div></div>
+      </div>
+
+      <div class="cv-section">
+        <h2>Skills</h2>
+        <div class="skills-group"><h3>Programming</h3><p>R, Python</p></div>
+        <div class="skills-group"><h3>Transcriptomics &amp; RNA-seq</h3><p>DESeq2, edgeR, limma, TCGAbiolinks, WGCNA, GSEA, clusterProfiler, variance-stabilizing normalization, batch-effect correction</p></div>
+        <div class="skills-group"><h3>Network &amp; functional analysis</h3><p>ceRNA / gene-regulatory networks, Spearman/Pearson, Fisher Z, GO/KEGG, PPI hub analysis (Cytoscape, STRING, GeneMANIA, CytoHubba, MCODE)</p></div>
+        <div class="skills-group"><h3>Machine learning</h3><p>LASSO, SVM, Random Forest, XGBoost, ANN; nested leave-one-out CV; permutation importance, SHAP; scikit-learn; single-cell/spatial (scanpy, squidpy); PyTorch</p></div>
+        <div class="skills-group"><h3>Survival &amp; drug&ndash;gene</h3><p>Cox proportional hazards, time-dependent ROC/AUC; DGIdb v5 (GraphQL); CTD curation</p></div>
+        <div class="skills-group"><h3>Laboratory</h3><p>Nucleic-acid extraction (phenol-chloroform, salting-out, TRIzol, kit); cDNA synthesis; conventional / RFLP / ARMS / Tetra-ARMS / qRT-PCR; primer design; agarose &amp; PAGE electrophoresis with silver staining; mammalian cell culture; MTT and AO/PI assays</p></div>
+      </div>
+
+      <div class="cv-section">
+        <h2>Honors &amp; awards</h2>
+        <div class="cv-row"><div class="cv-date">2024</div>
+          <div class="cv-entry"><h3>Best Oral Presentation Award</h3>
+            <p class="org">2nd International Congress of Cancer Genomics (CGC2024), Tehran</p>
+          </div></div>
+      </div>
+
+      <div class="cv-section">
+        <h2>Publications &amp; presentations</h2>
+        <p class="org">See the <a href="publications.html">Publications</a> page for the full list.</p>
+      </div>
     </section>
   </main>
   <footer class="site-footer">
