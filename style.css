@@ -200,8 +200,9 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 .research-list { display: flex; flex-direction: column; gap: 2.4rem; padding: 1.75rem 0 0; max-width: 66ch; }
 .theme { border-top: 1px solid var(--line); padding-top: 1.4rem; }
 .theme .tag {
-  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em;
-  text-transform: uppercase; color: var(--oxblood); display: block; margin-bottom: 0.5rem;
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--paper); background: var(--oxblood);
+  display: inline-block; padding: 3px 9px; border-radius: 3px; margin-bottom: 0.7rem;
 }
 .theme h2 {
   font-family: var(--display); font-weight: 600; font-size: 1.5rem;
@@ -212,10 +213,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 .theme .methods b { color: var(--ink); font-weight: 500; }
 
 /* ---- PUBLICATIONS page ---- */
-.pub-group { margin: 0 0 2rem; max-width: 72ch; }
+.pub-group { margin: 0 0 3.2rem; max-width: 72ch; }
 .pub-label {
-  font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--oxblood); display: block; margin-bottom: 0.3rem;
+  font-family: var(--display); font-size: 1.25rem; font-weight: 600;
+  letter-spacing: -0.01em; color: var(--oxblood); display: inline-block;
+  margin-bottom: 0.7rem; padding-bottom: 3px; border-bottom: 2px solid var(--oxblood);
 }
 .pub { padding: 0.85rem 0; border-top: 1px solid var(--line); }
 .pub .title { font-weight: 600; color: var(--ink); }
@@ -235,9 +237,10 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
   padding: 1.5rem 1.5rem 3rem; border-top: 1px solid var(--line);
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem;
 }
-.footer-links { display: flex; gap: 1.25rem; font-family: var(--mono); font-size: 0.8rem; }
-.footer-links a { color: var(--muted); }
+.footer-links { display: flex; gap: 1.2rem; align-items: center; font-family: var(--mono); font-size: 0.8rem; }
+.footer-links a { color: var(--muted); display: inline-flex; }
 .footer-links a:hover { color: var(--oxblood); text-decoration: none; }
+.footer-links svg { width: 20px; height: 20px; display: block; }
 .footer-note { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); margin: 0; }
 
 /* ============================================================
@@ -334,3 +337,10 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 .project-card p { margin: 0; font-size: 0.92rem; color: var(--ink); flex: 1; }
 .project-stack { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); }
 .project-card .links { font-family: var(--mono); font-size: 0.78rem; }
+
+
+/* ---- scroll progress bar ---- */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0;
+  background: var(--accent); z-index: 10001; transition: background .15s ease;
+}
