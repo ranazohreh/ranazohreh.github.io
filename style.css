@@ -15,7 +15,7 @@
   --line:   #ddcfb6;   /* warm hairline */
 
   /* ---- ACCENTS (the palette) ---- */
-  --olive:   #7c9050;
+  --olive:   #6f8346;
   --amber:   #a85d2e;
   --oxblood: #7c3a33;
   --accent:  var(--olive);   /* primary: links + active nav */
@@ -62,7 +62,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
    ============================================================ */
 .site-header {
   margin: 0;
-  padding: 2.5rem clamp(1.5rem, 4vw, 3rem) 0;
+  padding: 1.4rem clamp(1.5rem, 4vw, 3rem) 0.9rem;
+  position: sticky; top: 0; z-index: 10001;
+  background: var(--paper);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -341,6 +343,6 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 
 /* ---- scroll progress bar ---- */
 #scroll-progress {
-  position: fixed; top: 0; left: 0; height: 3px; width: 0;
-  background: var(--accent); z-index: 10001; transition: background .15s ease;
+  position: absolute; left: 0; bottom: 0; height: 3px; width: 0;
+  background: var(--amber); z-index: 2; transition: background .15s ease;
 }
