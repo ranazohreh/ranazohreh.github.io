@@ -59,59 +59,103 @@
       <div class="cv-section">
         <h2>Education</h2>
         <div class="cv-row"><div class="cv-date">2021&ndash;2025</div>
-          <div class="cv-entry"><h3>M.Sc. Molecular Genetics</h3>
+          <div class="cv-entry"><h3>M.Sc. Genetics</h3>
             <p class="org">Islamic Azad University, Central Tehran Branch &middot; GPA 18.52 / 20</p>
-            <ul><li>Thesis: comparison of common mutations and gene networks in prostate and testicular cancer using bioinformatics tools &mdash; graded <em>Excellent</em>. Supervisor: Dr. Nastaran Asghari Moghaddam; Advisor: Dr. Mina Ramezani.</li></ul>
+            <ul>
+              <li>Thesis: comparison of common mutations and gene networks in prostate and testicular cancer using bioinformatics tools (graded <em>Excellent</em>).</li>
+              <li>Supervisor: Dr. Nastaran Asghari Moghaddam; Advisor: Dr. Mina Ramezani.</li>
+            </ul>
           </div></div>
         <div class="cv-row"><div class="cv-date">2016&ndash;2020</div>
-          <div class="cv-entry"><h3>B.Sc. Molecular Genetics</h3>
+          <div class="cv-entry"><h3>B.Sc. Cellular and Molecular Biology &ndash; Genetics</h3>
             <p class="org">Islamic Azad University, Qom &middot; GPA 15.84 / 20</p>
           </div></div>
       </div>
 
       <div class="cv-section">
         <h2>Research experience</h2>
-        <div class="cv-row"><div class="cv-date">2024&ndash;present</div>
-          <div class="cv-entry"><h3>Graduate Researcher &mdash; Population-Specific ceRNA Networks</h3>
-            <p class="org">Dept. of Biology, Central Tehran Branch, Islamic Azad University</p>
+        <div class="cv-row"><div class="cv-date">2023&ndash;2025</div>
+          <div class="cv-entry"><h3>MSc Thesis Researcher, Comparative &amp; Population-Stratified Cancer Genomics</h3>
+            <p class="org">Department of Biology, Central Tehran Branch, Islamic Azad University, Tehran, Iran</p>
             <ul>
-              <li>Constructed population-specific ceRNA networks from RNA-seq (GSE104131; DESeq2), integrating HMDD v4, starBase, and four target-prediction databases.</li>
-              <li>Validated regulatory axes in TCGA-PRAD via correlation (BH-FDR), expression-matched backgrounds, and Fisher Z cross-population testing.</li>
-              <li>Prioritized axes with a four-criterion composite score; mapped druggable targets through a custom DGIdb v5 GraphQL integration.</li>
+              <li>Compared African American and European American patients across prostate (TCGA-PRAD) and testicular (TCGA-TGCT) cancer cohorts, integrating transcriptomic (mRNA, lncRNA, and miRNA) and somatic mutation data.</li>
+              <li>Constructed PPI and ceRNA networks across four population&ndash;cancer groups, identifying population-specific hub genes and distinct molecular pathways associated with ancestry and tumor type.</li>
+              <li>Built population-specific prostate ceRNA networks (GSE104131), integrating multiple miRNA-target and disease-association databases. Validated regulatory axes in TCGA-PRAD and compared network structure across populations using statistical and network-based approaches. Prioritized axes and targets through multi-criteria ranking and drug-gene interaction analysis.</li>
             </ul>
           </div></div>
         <div class="cv-row"><div class="cv-date">2024&ndash;2025</div>
-          <div class="cv-entry"><h3>Researcher &mdash; ML for Early-Onset Prostate Cancer Biomarkers</h3>
-            <p class="org">Dept. of Biology, Central Tehran Branch, Islamic Azad University</p>
+          <div class="cv-entry"><h3>Researcher, Machine Learning for Early-Onset Prostate Cancer Biomarkers</h3>
+            <p class="org">Department of Biology, Central Tehran Branch, Islamic Azad University, Tehran, Iran</p>
             <ul>
-              <li>Integrated WGCNA co-expression with DESeq2 on TCGA-PRAD (White, &lt;55 yrs); found 485 candidate genes enriched in cytoskeleton-organization pathways.</li>
-              <li>Built a nested leave-one-out pipeline with LASSO across SVM, RF, and ANN (AUC 0.86 / 0.89 / 0.91).</li>
-              <li>Identified lncRNA PCSEAT as the shared biomarker; confirmed with permutation importance and SHAP; validated in GSE115414.</li>
+              <li>Integrated WGCNA co-expression analysis with DESeq2 differential expression on TCGA-PRAD (White patients, &lt;55 years); identified 485 candidate genes at the WGCNA driver&ndash;DEG intersection, enriched in cytoskeleton organization pathways.</li>
+              <li>Built a nested leave-one-out cross-validation pipeline with LASSO feature selection across SVM, RF, and ANN classifiers (AUC 0.86, 0.89, and 0.91 on 20 samples, respectively).</li>
+              <li>Identified PCSEAT as a robust biomarker consistently selected across all three classifiers; confirmed its importance with permutation importance and SHAP, and validated its overexpression in an independent dataset (GSE115414).</li>
             </ul>
           </div></div>
-        <div class="cv-row"><div class="cv-date">2021&ndash;2025</div>
-          <div class="cv-entry"><h3>MSc Thesis Researcher &mdash; Comparative Cancer Genomics</h3>
-            <p class="org">Dept. of Biology, Central Tehran Branch, Islamic Azad University</p>
+        <div class="cv-row"><div class="cv-date">2023&ndash;2024</div>
+          <div class="cv-entry"><h3>Researcher, Machine Learning for Glioblastoma Treatment Groups</h3>
+            <p class="org">Department of Biology, Central Tehran Branch, Islamic Azad University, Tehran, Iran</p>
             <ul>
-              <li>Compared African American vs. European American patients across prostate (TCGA-PRAD) and testicular (TCGA-TGCT) cohorts, integrating expression with somatic mutation profiles (cBioPortal).</li>
-              <li>Built PPI and ceRNA networks for all four population&ndash;cohort groups; identified population-specific hubs and distinct pathways.</li>
+              <li>Trained RF and XGBoost classifiers on TCGA-GBM to separate patients by the treatment they received.</li>
+              <li>Validated model performance through internal cross-validation, with RF achieving the best performance (AUC 0.81).</li>
             </ul>
-          </div></div>
-        <div class="cv-row"><div class="cv-date">2023</div>
-          <div class="cv-entry"><h3>Laboratory Intern &mdash; Wet-Lab Training</h3>
-            <p class="org">GenIran, Tehran</p>
-            <ul><li>Hands-on molecular biology (DNA/RNA extraction, PCR, qRT-PCR, electrophoresis) and mammalian cell culture (passaging, freeze/thaw, MTT and AO/PI viability assays).</li></ul>
           </div></div>
       </div>
 
       <div class="cv-section">
-        <h2>Skills</h2>
-        <div class="skills-group"><h3>Programming</h3><p>R, Python</p></div>
-        <div class="skills-group"><h3>Transcriptomics &amp; RNA-seq</h3><p>DESeq2, edgeR, limma, TCGAbiolinks, WGCNA, GSEA, clusterProfiler, variance-stabilizing normalization, batch-effect correction</p></div>
-        <div class="skills-group"><h3>Network &amp; functional analysis</h3><p>ceRNA / gene-regulatory networks, Spearman/Pearson, Fisher Z, GO/KEGG, PPI hub analysis (Cytoscape, STRING, GeneMANIA, CytoHubba, MCODE)</p></div>
-        <div class="skills-group"><h3>Machine learning</h3><p>LASSO, SVM, Random Forest, XGBoost, ANN; nested leave-one-out CV; permutation importance, SHAP; scikit-learn; single-cell/spatial (scanpy, squidpy); PyTorch</p></div>
-        <div class="skills-group"><h3>Survival &amp; drug&ndash;gene</h3><p>Cox proportional hazards, time-dependent ROC/AUC; DGIdb v5 (GraphQL); CTD curation</p></div>
-        <div class="skills-group"><h3>Laboratory</h3><p>Nucleic-acid extraction (phenol-chloroform, salting-out, TRIzol, kit); cDNA synthesis; conventional / RFLP / ARMS / Tetra-ARMS / qRT-PCR; primer design; agarose &amp; PAGE electrophoresis with silver staining; mammalian cell culture; MTT and AO/PI assays</p></div>
+        <h2>Independent projects</h2>
+        <div class="cv-entry">
+          <ul>
+            <li><strong>Microglia/PVM RNA&ndash;ATAC Concordance in Alzheimer's Brain (SEA-AD):</strong> Analyzed paired snRNA and snATAC profiles from 2,692 matched microglia/PVM nuclei with Scanpy and snapatac2, labeling RNA activation state and clustering ATAC independently. Chromatin clusters showed no donor confounding while RNA clusters did, and agreement between the two groupings was near zero (ARI 0.007).<br>
+              Code: <a href="https://github.com/ranazohreh/microglia-concordance" target="_blank" rel="noopener noreferrer">github.com/ranazohreh/microglia-concordance</a></li>
+            <li><strong>Spatial Transcriptomics of Mouse Hypothalamus:</strong> Analyzed MERFISH data from Moffitt et al. (2018) with Scanpy and Squidpy for clustering and cell-type co-localization analysis. Developed cell-type classifiers (PyTorch MLP and Random Forest); adding neighborhood expression to a cell's own expression did not improve prediction.<br>
+              Code: <a href="https://github.com/ranazohreh/spatial-neuro-cell-identity" target="_blank" rel="noopener noreferrer">github.com/ranazohreh/spatial-neuro-cell-identity</a></li>
+            <li><strong>Cell-Type-of-Origin of Prostate Cancer Drug Targets:</strong> Analyzed human prostate scRNA-seq (GSE193337) with Scanpy to map top Open Targets prostate-cancer genes to their cellular sources, distinguishing epithelial-restricted from broadly expressed targets. Validated the mapping with known epithelial targets as positive controls.<br>
+              Code: <a href="https://github.com/ranazohreh/prostate-target-origin" target="_blank" rel="noopener noreferrer">github.com/ranazohreh/prostate-target-origin</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h2>Publications &amp; presentations</h2>
+        <p class="org">See the <a href="publications">Publications</a> page for the full list.</p>
+      </div>
+
+      <div class="cv-section">
+        <h2>Computational skills</h2>
+        <div class="skills-group"><h3>Programming &amp; Tools</h3><p>R, Python, Jupyter, git</p></div>
+        <div class="skills-group"><h3>Bulk RNA-seq &amp; Differential Expression</h3><p>DESeq2, edgeR, limma, TCGAbiolinks; differential expression, variance-stabilizing normalization, batch-effect correction</p></div>
+        <div class="skills-group"><h3>Single-Cell, Spatial &amp; multiome</h3><p>Scanpy, AnnData, Squidpy, SnapATAC2, harmonypy, Scrublet; QC, doublet removal, clustering, cell-type annotation, spatial neighborhood analysis, paired RNA&ndash;ATAC analysis</p></div>
+        <div class="skills-group"><h3>Machine Learning &amp; Interpretation</h3><p>scikit-learn, PyTorch; LASSO, SVM, Random Forest, XGBoost, ANN/MLP, nested leave-one-out cross-validation, permutation importance, SHAP</p></div>
+        <div class="skills-group"><h3>Network &amp; Functional Analysis</h3><p>WGCNA, Cytoscape, STRING, GeneMANIA, clusterProfiler, ReactomePA; co-expression module detection, PPI/ceRNA networks, hub analysis, GO/KEGG/Reactome enrichment, GSEA</p></div>
+        <div class="skills-group"><h3>Statistical Analysis</h3><p>Pearson/Spearman correlation, differential correlation, Wilcoxon tests, survival analysis, Cox regression, multiple-testing correction</p></div>
+        <div class="skills-group"><h3>Databases &amp; Target Analysis</h3><p>ENCORI/starBase, miRWalk, TargetScan, miRDB, miRTarBase, HMDD, CTD, DGIdb, Open Targets; multi-database target prediction, drug&ndash;gene interaction mapping, target prioritization</p></div>
+        <div class="skills-group"><h3>Visualization</h3><p>ggplot2, matplotlib, GraphPad Prism; volcano/MA plots, heatmaps, PCA, UMAP</p></div>
+      </div>
+
+      <div class="cv-section">
+        <h2>Laboratory skills</h2>
+        <div class="skills-group"><h3>Molecular Biology</h3><p>nucleic acid extraction (DNA: phenol&ndash;chloroform, salting-out, kit-based; RNA: TRIzol, kit-based); cDNA synthesis; PCR (conventional, RFLP, ARMS, Tetra-ARMS, qPCR, RT-qPCR); primer design (GeneRunner); agarose gel electrophoresis; PAGE with silver staining.</p></div>
+        <div class="skills-group"><h3>Cellular Biology</h3><p>mammalian cell culture (passaging, freezing, thawing); MTT and Acridine Orange/Propidium Iodide (AO/PI) viability assays; western blot; flow cytometry (including compensation and gating in FlowJo).</p></div>
+      </div>
+
+      <div class="cv-section">
+        <h2>Additional training</h2>
+        <div class="cv-row"><div class="cv-date">2026</div>
+          <div class="cv-entry"><h3>11th Laboratory Techniques School</h3>
+            <p class="org">USERN</p>
+            <ul><li>Hands-on workshops in DNA extraction and PCR, mammalian cell culture, western blot, and flow cytometry, with accompanying theoretical sessions.</li></ul>
+          </div></div>
+        <div class="cv-row"><div class="cv-date">2023</div>
+          <div class="cv-entry"><h3>Molecular Biology Techniques and Cell Culture</h3>
+            <p class="org">GenIran</p>
+            <ul><li>Hands-on training in molecular biology techniques (DNA/RNA extraction, real-time PCR (qPCR), gel electrophoresis) and mammalian cell culture (passaging, freezing/thawing; MTT and AO/PI viability assays).</li></ul>
+          </div></div>
+        <div class="cv-row"><div class="cv-date">2022</div>
+          <div class="cv-entry"><h3>NGS and RNA Sequencing</h3>
+            <p class="org">BioinfCamp</p>
+            <ul><li>Hands-on RNA-seq and WES workflows in Google Colab: raw-read QC, alignment, variant calling, and annotation.</li></ul>
+          </div></div>
       </div>
 
       <div class="cv-section">
@@ -120,11 +164,6 @@
           <div class="cv-entry"><h3>Best Oral Presentation Award</h3>
             <p class="org">2nd International Congress of Cancer Genomics (CGC2024), Tehran</p>
           </div></div>
-      </div>
-
-      <div class="cv-section">
-        <h2>Publications &amp; presentations</h2>
-        <p class="org">See the <a href="publications">Publications</a> page for the full list.</p>
       </div>
     </section>
   </main>
