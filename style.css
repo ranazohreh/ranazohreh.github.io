@@ -223,6 +223,9 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 }
 .theme p { margin: 0 0 0.9rem; color: var(--ink); }
 .theme .methods { font-family: var(--mono); font-size: 0.76rem; color: var(--muted); margin: 0; }
+.theme .status { font-family: var(--mono); font-size: 0.76rem; color: var(--muted); margin: -0.2rem 0 0.9rem; }
+.research-group { margin: 2.6rem 0 0; }
+.research-group .research-list { padding-top: 0; gap: 2.6rem; }
 .theme .methods b { color: var(--ink); font-weight: 500; }
 
 /* ---- PUBLICATIONS page ---- */
