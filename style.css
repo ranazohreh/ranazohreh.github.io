@@ -142,6 +142,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 .dots span:nth-child(3) { background: var(--oxblood); }
 
 .lede { font-size: 1.18rem; color: var(--ink); max-width: 40ch; margin: 0; }
+.lede + .lede { margin-top: 0.6rem; }
 
 /* ---- PORTRAIT ---- */
 .portrait { margin: 0; position: relative; z-index: 10000; }  /* z-index keeps photo above the grain */
