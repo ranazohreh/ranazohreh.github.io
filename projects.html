@@ -44,35 +44,49 @@
   <main>
     <section class="page-intro">
       <h1>Projects</h1>
-      <p class="page-lede">Selected computational projects. Code and documentation on
+      <p class="page-lede">These are independent analyses of public data, built to practice
+        single-cell, multiome and spatial methods. The code and full results are on
         <a href="https://github.com/ranazohreh" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
       <div class="projects-grid">
         <article class="project-card">
-          <span class="tag">Single-cell / spatial</span>
-          <h2>Spatial Transcriptomics of Mouse Brain</h2>
-          <p>A scanpy/squidpy pipeline for preprocessing, clustering, and spatial-domain
-             analysis, with a PyTorch cell-type classifier benchmarked against a
-             scikit-learn baseline and interpreted via feature importance.</p>
-          <span class="project-stack">scanpy &middot; squidpy &middot; PyTorch &middot; scikit-learn</span>
+          <span class="tag">Single-nucleus multiome</span>
+          <h2>Brain immune cells: do gene expression and chromatin agree?</h2>
+          <p>I asked whether gene expression and open chromatin agree on the activation
+             state of microglia and perivascular macrophages, the brain’s resident immune
+             cells, when both are measured in the same nucleus. I used paired single-nucleus
+             RNA and ATAC data from the SEA-AD human brain atlas, covering 2,692 nuclei
+             after quality control. I labeled each nucleus as homeostatic or activated from
+             its RNA, and clustered the ATAC data separately. The two groupings showed almost
+             no agreement (adjusted Rand index 0.007, where 0 is chance level). The RNA label
+             split a continuous signal in two, which limits how much agreement could be
+             detected.</p>
+          <span class="project-stack">Scanpy &middot; SnapATAC2 &middot; muon &middot; scikit&#8209;learn</span>
+          <span class="links"><a href="https://github.com/ranazohreh/microglia-concordance" target="_blank" rel="noopener noreferrer">Repository &rarr;</a></span>
+        </article>
+        <article class="project-card">
+          <span class="tag">Single-cell</span>
+          <h2>Which cells express prostate cancer drug targets?</h2>
+          <p>A drug target that is also expressed outside the tumor can cause side effects.
+             Following an approach used by Mou and Harries (2025), I checked which cell types
+             express the 20 genes most strongly linked to prostate carcinoma in Open Targets.
+             I used single-cell RNA-seq from 4 patients (GSE193337), with 25,235 cells
+             annotated into 8 cell types. Most of the 20 genes, such as PTEN and TP53, were
+             expressed across all cell types. FOLH1 (PSMA), TMPRSS2 and FOXA1 were correctly
+             found in epithelial cells, even though I did not use them to label cell types.</p>
+          <span class="project-stack">Scanpy &middot; Scrublet &middot; Open Targets</span>
+          <span class="links"><a href="https://github.com/ranazohreh/prostate-target-origin" target="_blank" rel="noopener noreferrer">Repository &rarr;</a></span>
+        </article>
+        <article class="project-card">
+          <span class="tag">Spatial</span>
+          <h2>Cell identity in spatial data from the mouse brain</h2>
+          <p>MERFISH measures gene expression in place in the tissue. I used MERFISH data from
+             the mouse hypothalamus (Moffitt et al., 2018), covering 161 genes and about
+             64,300 cells in 14 cell types. I ran spatial neighborhood analysis, then
+             predicted cell type with a random forest and a neural network. Both reached
+             0.93 accuracy, and the neural network did better on rare cell types. Adding the
+             expression of each cell’s spatial neighbors did not improve the random forest.</p>
+          <span class="project-stack">Scanpy &middot; Squidpy &middot; PyTorch &middot; scikit&#8209;learn</span>
           <span class="links"><a href="https://github.com/ranazohreh/spatial-neuro-cell-identity" target="_blank" rel="noopener noreferrer">Repository &rarr;</a></span>
-        </article>
-        <article class="project-card">
-          <span class="tag">Regulatory networks</span>
-          <h2>Population-Specific ceRNA Pipeline</h2>
-          <p>Reproducible pipeline building population-stratified ceRNA and gene-regulatory
-             networks from RNA-seq and TCGA, with multi-criterion axis prioritization and
-             druggable-target mapping via a custom DGIdb GraphQL integration.</p>
-          <span class="project-stack">R &middot; DESeq2 &middot; TCGAbiolinks &middot; Cytoscape</span>
-          <span class="links"><a href="https://github.com/ranazohreh" target="_blank" rel="noopener noreferrer">Code in preparation &rarr;</a></span>
-        </article>
-        <article class="project-card">
-          <span class="tag">Machine learning</span>
-          <h2>ML Biomarker Discovery &mdash; Early-Onset Prostate Cancer</h2>
-          <p>WGCNA and differential-expression integration with a nested leave-one-out
-             pipeline (LASSO; SVM/RF/ANN) identifying the lncRNA PCSEAT, interpreted with
-             SHAP and permutation importance and validated in an independent cohort.</p>
-          <span class="project-stack">R &middot; Python &middot; scikit-learn &middot; WGCNA</span>
-          <span class="links"><a href="https://github.com/ranazohreh" target="_blank" rel="noopener noreferrer">Code in preparation &rarr;</a></span>
         </article>
       </div>
     </section>
