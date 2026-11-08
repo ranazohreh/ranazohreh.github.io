@@ -80,7 +80,7 @@
             <ul>
               <li>Compared African American and European American patients across prostate (TCGA-PRAD) and testicular (TCGA-TGCT) cancer cohorts, integrating transcriptomic (mRNA, lncRNA, and miRNA) and somatic mutation data.</li>
               <li>Constructed PPI and ceRNA networks across four population&ndash;cancer groups, identifying population-specific hub genes and distinct molecular pathways associated with ancestry and tumor type.</li>
-              <li>Built population-specific prostate ceRNA networks (GSE104131), integrating multiple miRNA-target and disease-association databases. Validated regulatory axes in TCGA-PRAD and compared network structure across populations using statistical and network-based approaches. Prioritized axes and targets through multi-criteria ranking and drug-gene interaction analysis.</li>
+              <li>Built separate ceRNA networks for African American and European American prostate cancer in one dataset (GSE104131) and tested the candidate pairs in TCGA-PRAD. Now rewriting the work as a methods paper on adding controls to a standard ceRNA pipeline, with both populations as worked examples.</li>
             </ul>
           </div></div>
         <div class="cv-row"><div class="cv-date">2024&ndash;2025</div>
@@ -89,7 +89,7 @@
             <ul>
               <li>Integrated WGCNA co-expression analysis with DESeq2 differential expression on TCGA-PRAD (White patients, &lt;55 years); identified 485 candidate genes at the WGCNA driver&ndash;DEG intersection, enriched in cytoskeleton organization pathways.</li>
               <li>Built a nested leave-one-out cross-validation pipeline with LASSO feature selection across SVM, RF, and ANN classifiers (AUC 0.86, 0.89, and 0.91 on 20 samples, respectively).</li>
-              <li>Identified PCSEAT as a robust biomarker consistently selected across all three classifiers; confirmed its importance with permutation importance and SHAP, and validated its overexpression in an independent dataset (GSE115414).</li>
+              <li>Identified PCSEAT as a biomarker consistently selected across all three classifiers; confirmed its importance with permutation importance and SHAP, and confirmed its overexpression in an independent dataset (GSE115414).</li>
             </ul>
           </div></div>
         <div class="cv-row"><div class="cv-date">2023&ndash;2024</div>
@@ -108,7 +108,7 @@
           <ul>
             <li><strong>Microglia/PVM RNA&ndash;ATAC Concordance in Alzheimer's Brain (SEA-AD):</strong> Analyzed paired snRNA and snATAC profiles from 2,692 matched microglia/PVM nuclei with Scanpy and snapatac2, labeling RNA activation state and clustering ATAC independently. Chromatin clusters showed no donor confounding while RNA clusters did, and agreement between the two groupings was near zero (ARI 0.007).<br>
               Code: <a href="https://github.com/ranazohreh/microglia-concordance" target="_blank" rel="noopener noreferrer">github.com/ranazohreh/microglia-concordance</a></li>
-            <li><strong>Spatial Transcriptomics of Mouse Hypothalamus:</strong> Analyzed MERFISH data from Moffitt et al. (2018) with Scanpy and Squidpy for clustering and cell-type co-localization analysis. Developed cell-type classifiers (PyTorch MLP and Random Forest); adding neighborhood expression to a cell's own expression did not improve prediction.<br>
+            <li><strong>Spatial Transcriptomics of Mouse Hypothalamus:</strong> Analyzed MERFISH data from Moffitt et al. (2018) with Scanpy and Squidpy for clustering and cell-type co-localization analysis. Developed cell-type classifiers (PyTorch MLP and Random Forest); adding neighborhood expression to a cell's own expression did not improve the Random Forest.<br>
               Code: <a href="https://github.com/ranazohreh/spatial-neuro-cell-identity" target="_blank" rel="noopener noreferrer">github.com/ranazohreh/spatial-neuro-cell-identity</a></li>
             <li><strong>Cell-Type-of-Origin of Prostate Cancer Drug Targets:</strong> Analyzed human prostate scRNA-seq (GSE193337) with Scanpy to map top Open Targets prostate-cancer genes to their cellular sources, distinguishing epithelial-restricted from broadly expressed targets. Validated the mapping with known epithelial targets as positive controls.<br>
               Code: <a href="https://github.com/ranazohreh/prostate-target-origin" target="_blank" rel="noopener noreferrer">github.com/ranazohreh/prostate-target-origin</a></li>
